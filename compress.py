@@ -1,8 +1,8 @@
 from itertools import combinations
 
-key = [2**i for i in range(0, 16)]
+keys = [2**i for i in range(0, 16)]
 
-keyPeer = list(combinations(key, 2))
+keyPeer = list(combinations(keys, 2))
 keySum = [i+j for i, j in keyPeer]
 
 
@@ -11,7 +11,7 @@ def findPeer(x):
 
 
 def findFromKey(x):
-  return key.index(x)
+  return keys.index(x)
 
 
 def fourbitArray(x):
@@ -53,9 +53,9 @@ def compress(x):
     else:
       abseq = (A < B)
 
-    A = key[A]
-    B = key[B]
-    C = key[C]
+    A = keys[A]
+    B = keys[B]
+    C = keys[C]
 
     S = A+B+C
     Z = A+B-C
