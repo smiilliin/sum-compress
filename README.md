@@ -44,3 +44,4 @@ Decryption
 5. Remove all salts
 
 ## Example
+![comparison](https://github.com/user-attachments/assets/6a2681fb-e063-40f1-800b-ac9fd57297c5)
