@@ -44,4 +44,8 @@ Decryption
 5. Remove all salts
 
 ## Example
+
+Image encryption example
 ![comparison](https://github.com/user-attachments/assets/6a2681fb-e063-40f1-800b-ac9fd57297c5)
+Encryption without key(just compression)
+![compression](./without-key0.png)
