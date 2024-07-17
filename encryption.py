@@ -22,7 +22,26 @@ def genKey():
   return key[0:keylen]
 
 
+def addSalt(data):
+  byteData = bytearray(data)
+  result = []
+
+  for i in range(0, len(byteData)):
+    result.append(byteData[i])
+    result.append(np.random.random_integers(0, 255))
+
+  return bytes(result)
+
+
+def removeSalt(data):
+  byteData = bytearray(data)
+  result = [byteData[i] for i in range(0, len(byteData), 2)]
+
+  return bytes(result)
+
+
 def encrypt(data, key):
+  data = addSalt(data)
   data, seqdata, length = compress(data)
   result = []
   keySize = len(key)
@@ -44,4 +63,7 @@ def decrypt(data, seqdata, length, key):
 
   result = keyArray[indicies]
 
-  return decompress(result, seqdata, length)
+  result = decompress(result, seqdata, length)
+  result = removeSalt(result)
+
+  return result

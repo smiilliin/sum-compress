@@ -29,10 +29,11 @@ Decompression
 
 Encryption
 
-1. Compress data
-2. Get indicies from data
-3. Add indicies with increasing offset
-4. Get data with keys, indicies
+1. Add salt(random byte) between each byte
+2. Compress data
+3. Get indicies from data
+4. Add indicies with increasing offset
+5. Get data with keys, indicies
 
 Decryption
 
@@ -40,5 +41,6 @@ Decryption
 2. Subtract indicies with increasing offset
 3. Get data with keys, indicies
 4. Decompress data
+5. Remove all salts
 
 ## Example
